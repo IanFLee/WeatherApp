@@ -18,9 +18,9 @@ import './App.css'
   }
 
 function App() {
-
   const [weather, setWeather] = useState<LocationData[]>([])
   
+  // Fetch and Set Weather
   useEffect(() => {
   	Promise.all(locations.map(fetchWeather))
   	.then(setWeather)
