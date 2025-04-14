@@ -9,7 +9,6 @@ import './App.css'
   // get also weather in australia and brazil
   
   const locations: string[] = ["Lima", "Reykjavik", "Tasmania"];
-  const m: number = 2;
 
   const fetchWeather = async (location: string) => {
   	console.log(location)
