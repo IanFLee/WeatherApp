@@ -4,11 +4,6 @@ import LocationData from './Components/LocationData.tsx'
 import './App.css'
 
   
-  // what is the simplest way to pull a set of responses from openweathermap.org,
-  // and display them on their cards?
-  
-  // get also weather in australia and brazil
-  
   const locations: string[] = ["Lima", "Reykjavik", "Tasmania"];
 
   const fetchWeather = async (location: string) => {
@@ -37,7 +32,6 @@ function App() {
   return (
     <>
       <div className="rounded-xl mt-4 mb-4 bg-orange-500 grid grid-cols-3 sm:grid-cols-3 gap-4">
-		{/* Flexible rectangle cards */}
 		{weather.map((data)=>(
 			<WeatherCard key={data.location} data={data} />
 		))}
