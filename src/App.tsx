@@ -27,7 +27,6 @@ function App() {
   	.catch(console.error);
   }, [])
 
-  // test
 
   return (
     <>
