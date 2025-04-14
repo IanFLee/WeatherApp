@@ -1,8 +1,8 @@
 interface LocationData {
-	location: string,
-	skyForecast: string,
-	temperature: number,
-	icon: null
+	location: string;
+	skyForecast: string;
+	temperature: number;
+	icon: null;
 }
 
 export const WeatherCard = ( {data} : {data:WeatherCard} ) => (

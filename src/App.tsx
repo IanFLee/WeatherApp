@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import WeatherCard from './WeatherCard.tsx'
+import { WeatherCard } from './WeatherCard.tsx'
 import './App.css'
 
   
