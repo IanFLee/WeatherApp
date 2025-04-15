@@ -8,6 +8,8 @@ import './App.css'
   
   console.log("API Key:", import.meta.env.VITE_OPENWEATHERMAP_KEY);
   
+  //test
+  
   useEffect(() => {
   console.log("API Key:", import.meta.env.VITE_OPENWEATHERMAP_KEY);
 }, []);
