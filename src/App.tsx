@@ -34,8 +34,6 @@ function App() {
   	.catch(console.error);
   }, [])
 
-// test
-
   return (
     <>
       <div className="rounded-xl mt-4 mb-4 bg-orange-500 grid grid-cols-3 sm:grid-cols-3 gap-4">
