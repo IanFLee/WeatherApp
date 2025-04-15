@@ -7,14 +7,17 @@ import './App.css'
   const locations: string[] = ["Lima", "Reykjavik", "Tasmania"];
 
   const fetchWeather = async (location: string) => {
+ 
   	const res = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + import.meta.env.VITE_OPENWEATHERMAP_KEY);
       const data = await res.json();
+      console.log(data)
       return {
         location: location,
         skyForecast: data.weather[0].main,
         temperature: Math.trunc( ( data.main.temp - 273.15 ) * 9/5 + 32 ), // Convert Kelvin to Fahrenheit
         icon: data.weather[0].icon
       }
+ 
   }
 
 function App() {
