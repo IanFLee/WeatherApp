@@ -5,6 +5,10 @@ import './App.css'
 
   
   const locations: string[] = ["Lima", "Reykjavik", "Tasmania"];
+  
+  useEffect(() => {
+  console.log("API Key:", import.meta.env.VITE_OPENWEATHERMAP_KEY); // Check Vercel logs
+}, []);
 
   const fetchWeather = async (location: string) => {
  
