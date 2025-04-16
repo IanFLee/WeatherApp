@@ -9,11 +9,11 @@ import './App.css'
   console.log("API Key:", import.meta.env.VITE_OPENWEATHERMAP_KEY);
   
   useEffect(() => {
-  console.log("API Key:", import.meta.env.VITE_OPENWEATHERMAP_KEY);
+  console.log("API Key in useeffect:", import.meta.env.VITE_OPENWEATHERMAP_KEY);
 }, []);
 
   const fetchWeather = async (location: string) => {
- 
+ 	console.log('fetching');
   	const res = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + import.meta.env.VITE_OPENWEATHERMAP_KEY);
       const data = await res.json();
       console.log(data)
