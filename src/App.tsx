@@ -8,9 +8,6 @@ import './App.css'
   
   console.log("API Key:", import.meta.env.VITE_OPENWEATHERMAP_KEY);
   
-  useEffect(() => {
-  console.log("API Key in useeffect:", import.meta.env.VITE_OPENWEATHERMAP_KEY);
-}, []);
 
   const fetchWeather = async (location: string) => {
  	console.log('fetching');
