@@ -53,14 +53,7 @@ function App() {
 	  </div>
       <h1 className="rounded-xl mt-4 mb-4 bg-gray-700 h-64 text-white text-3xl border border-gray-600 flex items-center justify-center">temp FAHR. - City</h1>
       <h6 className="bg-white h-16 text-xl border">Tailwind - React - Typescript</h6>
-      <div className="bg-blue-200 text-left pl-2"><p>BtnUp - remember to remove env var</p></div>
-      <div className="bg-white text-left pl-2"><p>Portfolio - o</p><h1>Hello ClashDisplay</h1><h1 className="font-clash">Hello ClashDisplay</h1><h1 className="font-switzer">Hello ClashDisplay</h1><h1 className="font-mono">Hello ClashDisplay</h1></div>
-      
 
-<div>
-      <p style={testStyle}>Manual font test</p>
-      <p className="bg-white font-switzer">Tailwind font test</p>
-    </div>
 
     </>
   )
