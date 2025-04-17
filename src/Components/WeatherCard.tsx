@@ -1,5 +1,6 @@
 import LocationData from './LocationData.tsx'
 
+
     // Test font loading immediately
   const switzer = {
     fontFamily: 'Switzer, mono'
@@ -8,6 +9,7 @@ import LocationData from './LocationData.tsx'
     const clashD = {
     fontFamily: 'ClashDisplay, mono'
   };
+
 
 export const WeatherCard = ( {data, active, onClick} : {data: LocationData; active: boolean; onClick:()=>void;} ) => (
 		

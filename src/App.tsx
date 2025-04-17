@@ -23,14 +23,17 @@ function App() {
   // Track which card is active
   const [activeCard, setActiveCard] = useState<LocationData | null>(null)
   
+  
     // Test font loading immediately
   const switzer = {
     fontFamily: 'Switzer, mono'
   };
   
+  /*
     const clashD = {
     fontFamily: 'ClashDisplay, mono'
   };
+  */
   
   // Fetch and Set Weather
   useEffect(() => {
@@ -63,10 +66,17 @@ function App() {
 			/>
 		))}
 	  </div>
-      <h1 className="rounded-xl mt-4 mb-4 bg-gray-700 h-64 text-white text-3xl border border-gray-600 flex items-center justify-center">{activeCard 
+
+      <div className="rounded-xl mt-4 mb-4 bg-gray-700 h-64 text-white text-6xl border border-gray-600 flex items-center justify-center" style={switzer}>
+      	  
+      <img className="w-24 h-24" src={activeCard ? "https://openweathermap.org/img/wn/" + activeCard.icon + ".png" : ""} />
+      <h1>
+        {activeCard 
           ? `${activeCard.location} - ${activeCard.skyForecast} ${activeCard.temperature}°F` 
-          : "Click a card to see weather"}</h1>
-      <h6 className="bg-white h-16 text-xl border">Tailwind - React - Typescript</h6>
+          : "Click a card to see weather"}
+        </h1>
+        </div>
+      <h6 className="text-gray-300 text-xl">Tailwind - React - Typescript</h6>
     </>
   )
 }
