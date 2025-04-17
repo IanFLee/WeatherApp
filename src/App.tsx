@@ -21,7 +21,7 @@ import './App.css'
 function App() {
   const [weather, setWeather] = useState<LocationData[]>([])
   // Track which card is active
-  const [activeCard, setActiveCard] = useState<string | null>(null)
+  const [activeCard, setActiveCard] = useState<LocationData | null>(null)
   
     // Test font loading immediately
   const switzer = {
@@ -35,9 +35,17 @@ function App() {
   // Fetch and Set Weather
   useEffect(() => {
   	Promise.all(locations.map(fetchWeather))
-  	.then(setWeather)
+  	.then((weatherData) => {
+  	  setWeather(weatherData);
+  	  // optionally set first card as active by default
+  	  if (weatherData.length > 0) {
+  	    setActiveCard(weatherData[1]);
+  	  }
+  	})
   	.catch(console.error);
   }, [])
+
+// test
 
   return (
     <>
@@ -49,13 +57,15 @@ function App() {
 			// Pass the data props down to children
 			data={data}
 			// Pass the boolean active state of the card
-			active={activeCard === data.location}
+			active={activeCard?.location === data.location}
 			// Update whether card is active
-			onClick={() => setActiveCard(data.location)}
+			onClick={() => setActiveCard(data)}
 			/>
 		))}
 	  </div>
-      <h1 className="rounded-xl mt-4 mb-4 bg-gray-700 h-64 text-white text-3xl border border-gray-600 flex items-center justify-center">temp FAHR. - City</h1>
+      <h1 className="rounded-xl mt-4 mb-4 bg-gray-700 h-64 text-white text-3xl border border-gray-600 flex items-center justify-center">{activeCard 
+          ? `${activeCard.location} - ${activeCard.skyForecast} ${activeCard.temperature}°F` 
+          : "Click a card to see weather"}</h1>
       <h6 className="bg-white h-16 text-xl border">Tailwind - React - Typescript</h6>
     </>
   )
