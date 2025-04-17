@@ -24,8 +24,12 @@ function App() {
   const [activeCard, setActiveCard] = useState<string | null>(null)
   
     // Test font loading immediately
-  const testStyle = {
-    fontFamily: 'Switzer, sans-serif'
+  const switzer = {
+    fontFamily: 'Switzer, mono'
+  };
+  
+    const clashD = {
+    fontFamily: 'ClashDisplay, mono'
   };
   
   // Fetch and Set Weather
@@ -37,7 +41,7 @@ function App() {
 
   return (
     <>
-      <div className="rounded-xl bg-orange-500 grid grid-cols-3 sm:grid-cols-3 gap-4">
+      <div className="rounded-xl bg-orange-600 grid grid-cols-3 sm:grid-cols-3 gap-4">
 		{weather.map((data)=>(
 			<WeatherCard
 			// Lists must have unique key
@@ -54,12 +58,21 @@ function App() {
       <h1 className="rounded-xl mt-4 mb-4 bg-gray-700 h-64 text-white text-3xl border border-gray-600 flex items-center justify-center">temp FAHR. - City</h1>
       <h6 className="bg-white h-16 text-xl border">Tailwind - React - Typescript</h6>
       <div className="bg-blue-200 text-left pl-2"><p>BtnUp - remember to remove env var</p></div>
-      <div className="bg-white text-left pl-2"><p>Portfolio - o</p><h1>Hello ClashDisplay</h1><h1 className="font-clash">Hello ClashDisplay</h1><h1 className="font-switzer">Hello ClashDisplay</h1><h1 className="font-mono">Hello ClashDisplay</h1></div>
+      <div className="bg-white text-left pl-2"><p>Portfolio - o</p><h1>Hello ClashDisplay</h1><h1 className="font-clash">Hello ClashDisplay</h1><h1 className="font-switzer">Hello ClashDisplay</h1><h1 className="font-mono">Hello ClashDisplay</h1><p>Hello ClashDisplay</p></div>
       
 
-<div>
-      <p style={testStyle}>Manual font test</p>
+<div className="bg-white">
+      <p style={switzer}>Manual font test</p>
+      <p style={clashD} className="text-8xl">2nd Manual</p>
       <p className="bg-white font-switzer">Tailwind font test</p>
+      			<p className="font-switzer">Is This Clash or Switzer?</p>
+			<p className="font-clash">Is This Clash or Switzer?</p>
+			<p className="bg-xyz123">false className</p>
+			<p className="font-sans">Sans (e.g., Helvetica, Arial)</p>
+			<p className="font-serif">Serif (e.g., Times New Roman)</p>
+			<p className="font-mono">Monospace (e.g., Courier New)</p>
+			<p className="font-switzer">Now works</p>
+<p className="font-clash">Now works</p>
     </div>
 
     </>
